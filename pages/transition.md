@@ -25,7 +25,7 @@ Consistent with the Cloud First policy, agencies shall use cloud infrastructure 
 
 ### Shared Services Managing Partner
 
-To support the shared services efforts described by this memorandum, the General Services Administration (GSA) Office of Government-wide Policy (OGP) shall serve as the data center shared services managing partner. OGP shall establish and maintain a data center shared services marketplace and coordinate shared services for inter-agency consumption by:
+To support the shared services efforts described by this memorandum, the General Services Administration (GSA) Office of Government-wide Policy (OGP) shall serve as the data center shared services managing partner, including commercial data centers and cloud computing services. OGP shall establish and maintain a data center shared services marketplace and coordinate shared services for inter-agency consumption by:
 
 * Coordinating with OMB to define qualifying operating standards for inter-agency shared services providers, creating guidance materials for becoming such a provider, and identifying and approving candidate providers.
 * Maintaining and monitoring inter-agency shared services provider operating standards.
