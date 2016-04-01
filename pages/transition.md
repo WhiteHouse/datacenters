@@ -31,7 +31,8 @@ To support the shared services efforts described by this memorandum, the General
 * Maintaining and monitoring inter-agency shared services provider operating standards.
 * Maintaining an online inventory of qualified inter-agency shared services providers.
 * Establishing an online decision support tool to facilitate agency review, selection, and analysis of inter-agency shared services providers.
-* Coordinating with the GSA Federal Acquisition Service (FAS) to create and maintain an inventory of acquisition tools and products specific to the technology and services surrounding data center optimization, including procurement vehicles for the acquisition of automated infrastructure management and monitoring tools.
+* Coordinating with the General Service Adminisration's Federal Acquisition Service (FAS) to create and maintain an inventory of acquisition tools and products specific to the technology and services surrounding data center optimization, including procurement vehicles for the acquisition of automated infrastructure management and monitoring tools.
+* Coordinating with the General Service Adminisration's consulting organizations including FAS, 18F, and GSA OCIO, to provide technical, organizational, and cultural guidance in managing the impact of modern IT services.
 * Developing, implementing, and maintaining financial and service models, as well as contracts, pertaining to data center procurement with customer/partner agencies and shared service providers. 
 * Providing a forum for participating and interested agencies to discuss the inter-agency shared services marketplace.
 
