@@ -21,7 +21,7 @@ As previously required by the FDCCI, agencies shall continue to principally redu
 
 ### Cloud Investment
 
-Consistent with the Cloud First policy, agencies shall use cloud infrastructure where possible, taking into consideration the cost, elasticity, and resiliency benefits of provisioned environments when planning new mission or support applications. Cloud environments are scalable and allow agencies to provision resources as required, on-demand.<sup id="fnr12"><a href="#fn12">12</a></sup> As required by FITARA, agencies utilizing cloud services shall do so in a manner that is consistent with the Federal Risk and Authorization Management Program (FedRAMP) and National Institute of Standards and Technology (NIST) guidance.<sup id="fnr13"><a href="#fn13">13</a></sup>
+Consistent with the Cloud First policy, agencies shall use cloud infrastructure where possible, taking into consideration the cost, elasticity, resiliency, and energy efficiency benefits of provisioned environments when planning new mission or support applications. Cloud environments are scalable and allow agencies to provision resources as required, on-demand.<sup id="fnr12"><a href="#fn12">12</a></sup> As required by FITARA, agencies utilizing cloud services shall do so in a manner that is consistent with the Federal Risk and Authorization Management Program (FedRAMP) and National Institute of Standards and Technology (NIST) guidance.<sup id="fnr13"><a href="#fn13">13</a></sup>
 
 ### Shared Services Managing Partner
 
