@@ -7,7 +7,7 @@ description: "Policy"
 
 ## Policy 
 
-As of March DD, 2016, FDCCI is superseded by the Data Center Optimization Initiative (DCOI) established in this memorandum.
+Effective 30 days following the issuance of this memo, FDCCI is superseded by the Data Center Optimization Initiative (DCOI) established in this memorandum.
 
 The DCOI, as described in this memorandum, requires agencies to develop and report on data center strategies to consolidate inefficient infrastructure, optimize existing facilities, achieve cost savings, and transition to more efficient infrastructure, such as cloud services and inter-agency shared services.<sup id="fnr4"><a href="#fn4">4</a></sup>
 
