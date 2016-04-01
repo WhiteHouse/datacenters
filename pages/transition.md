@@ -30,7 +30,7 @@ To support the shared services efforts described by this memorandum, the General
 * Coordinating with OMB to define qualifying operating standards for inter-agency shared services providers, creating guidance materials for becoming such a provider, and identifying and approving candidate providers.
 * Maintaining and monitoring inter-agency shared services provider operating standards.
 * Maintaining an online inventory of qualified inter-agency shared services providers.
-* Establishing an online decision support tool to facilitate agency review, selection, and analysis of inter-agency shared services providers.
+* Establishing online facilities to facilitate agency review, selection, and analysis of inter-agency shared services providers.
 * Coordinating with the GSA Federal Acquisition Service (FAS) to create and maintain an inventory of acquisition tools and products specific to the technology and services surrounding data center optimization, including procurement vehicles for the acquisition of automated infrastructure management and monitoring tools.
 * Developing, implementing, and maintaining financial and service models, as well as contracts, pertaining to data center procurement with customer/partner agencies and shared service providers. 
 * Providing a forum for participating and interested agencies to discuss the inter-agency shared services marketplace.
