@@ -7,7 +7,7 @@ description: "Introduction"
 
 ## Background
 
-In 2010, the Office of Management and Budget (OMB) launched the Federal Data Center Consolidation Initiative (FDCCI) to promote the use of Green IT by reducing the overall energy and real estate footprint of government data centers, reduce the cost of data center hardware, software and operations, increase the overall IT security posture of the Federal government, and shift IT investments to more efficient computing platforms and technologies.<sup id="fnr1"><a href="#fn1">1</a></sup>
+In 2010, the Office of Management and Budget (OMB) launched the Federal Data Center Consolidation Initiative (FDCCI) to promote the use of Green IT by reducing the overall energy and real estate footprint of government data centers, reduce the cost of data center hardware, software and operations, increase the overall IT security posture of the Federal government, and shift IT investments to more efficient computing platforms and technologies, and mission.<sup id="fnr1"><a href="#fn1">1</a></sup>
 
 In December 2014, the President signed into law the Federal Information Technology Acquisition Reform Act (FITARA),<sup id="fnr2"><a href="#fn2">2</a></sup> which enacts and builds upon the requirements of the FDCCI.  FITARA requires that agencies submit annual reports that are to include: comprehensive data center inventories; multi-year strategies to consolidate and optimize data centers; performance metrics and a timeline for agency activities; and yearly calculations of investment and cost savings.
 
