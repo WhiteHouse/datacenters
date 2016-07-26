@@ -37,7 +37,7 @@ To support the shared services efforts described by this memorandum, the General
 
 In this role, OGP will serve as a trusted agent and subject matter expert to assist data center providers and consumers of data center services by providing guidance on technology advancements, innovation, cybersecurity, and best practices.
 
-All agencies will have the option of submitting data centers of their choosing for review by OGP. Data centers that OGP determines satisfactory in all of their operating standards will be designated as inter-agency shared services providers. 
+All agencies will have the option of submitting data centers of their choosing for review by OGP. Data centers that OGP determines satisfactory in all of their operating standards will be designated as inter-agency shared services providers. Should an alternate determination be made, agencies will commit to working with OGP for devising or revising plans as appropriate based on OGP's guidance.
 
 ### Footnotes
 
