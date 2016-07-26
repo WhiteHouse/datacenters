@@ -48,7 +48,7 @@ By the end of fiscal year 2018, agencies shall close at least 25% of tiered data
 
 In the long term, all agencies should continually strive to close all non-tiered data centers. Server rooms and closets pose security risks and management challenges and are an inefficient use of resources. As such, although at least 60% of non-tiered data centers are required to be closed before the end of fiscal year 2018, OMB expects that agencies will consider all such facilities as temporary and work to close them.
 
-Within 30 days after publication of this document, OMB OFCIO will share with each agency its individual goal for data centers closures, specifying the respective number of tiered and non-tiered data centers the agency must close.
+Within 30 days after publication of this document, OMB OFCIO will share with each agency its individual goal for data centers closures, specifying the respective number of tiered and non-tiered data centers the agency must close. OMB OFCIO will publish these numbers on a public website in a machine readable format.
 
 ###Footnotes
 
