@@ -19,7 +19,7 @@ Under this memorandum, OMB sets closure and optimization targets that are applic
 
 ### Energy Metering and Power Efficiency
 
-Agencies shall install automated energy metering tools and shall use these to collect and report to OMB energy usage data in their data centers. The March 19, 2015, Executive Order 13693, "Planning for Federal Sustainability in the Next Decade," requires agencies to install and monitor advanced energy meters in all data centers by September 30, 2018.<sup id="fnr16"><a href="#fn16">16</a></sup>
+Agencies shall install automated energy metering tools and shall use these to collect and report to OMB energy usage data in their data centers. In addition, this data should be made public in an open standards format on data.gov and updated monthly, and published alongside agency data center plans. The March 19, 2015, Executive Order 13693, "Planning for Federal Sustainability in the Next Decade," requires agencies to install and monitor advanced energy meters in all data centers by September 30, 2018.<sup id="fnr16"><a href="#fn16">16</a></sup>
 #
 
 OMB will monitor the energy efficiency of data centers through a Power Usage Effectiveness (PUE) metric.<sup id="fnr17"><a href="#fn17">17</a></sup> Energy metering tools shall enable the active tracking of PUE for the data center and shall be installed in all tiered Federal data centers by September 30, 2018.<sup id="fnr18"><a href="#fn18">18</a></sup>
