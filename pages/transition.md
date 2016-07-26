@@ -32,7 +32,7 @@ To support the shared services efforts described by this memorandum, the General
 * Maintaining an online inventory of qualified inter-agency shared services providers.
 * Establishing an online decision support tool to facilitate agency review, selection, and analysis of inter-agency shared services providers.
 * Coordinating with the GSA Federal Acquisition Service (FAS) to create and maintain an inventory of acquisition tools and products specific to the technology and services surrounding data center optimization, including procurement vehicles for the acquisition of automated infrastructure management and monitoring tools.
-* Developing, implementing, and maintaining financial and service models, as well as contracts, pertaining to data center procurement with customer/partner agencies and shared service providers. 
+* Developing, implementing, and maintaining financial and service models, and open data solutions and dashboards, as well as contracts, pertaining to data center procurement with customer/partner agencies and shared service providers. 
 * Providing a forum for participating and interested agencies to discuss the inter-agency shared services marketplace.
 
 In this role, OGP will serve as a trusted agent and subject matter expert to assist data center providers and consumers of data center services by providing guidance on technology advancements, innovation, cybersecurity, and best practices.
