@@ -12,7 +12,7 @@ Optimization, cost-savings, and closure metrics and goals apply to all federally
 
 ### Goal 1: Optimization
 
-The following optimization metrics are listed in order of priority. Agencies shall achieve and maintain all listed target values by the end of fiscal year 2018:<sup id="fnr22"><a href="#fn22">22</a></sup>
+Agencies shall achieve and maintain all listed target values by the end of fiscal year 2018:<sup id="fnr22"><a href="#fn22">22</a></sup>
 
 **Table 1. Government-wide Optimization Targets for Tiered Data Centers**
 
