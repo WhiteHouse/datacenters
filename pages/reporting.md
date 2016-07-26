@@ -8,7 +8,7 @@ description: "Reporting"
 
 ### Compliance Measurement
 
-Data will be collected quarterly on an agency-by-agency basis through the OMB OFCIO IDC, as follows:
+Data will be collected quarterly on an agency-by-agency basis through the OMB OFCIO Integrated Data Collection (IDC), as follows:
 
 1. Agencies must continue to maintain complete inventories of all data center facilities, closure/consolidation plans, and properties of each facility owned, operated, or maintained by or on behalf of the agency.
 2. Agencies must include progress toward meeting all optimization metric target values.<sup id="fnr31"><a href="#fn31">31</a></sup>
