@@ -40,7 +40,7 @@ Within 30 days after publication of this document, OMB OFCIO will set individual
 
 ### Goal 3: Closed Data Centers
 
-In all cases, the term "closed" for data centers shall refer exclusively to tiered or non-tiered data centers that: a) no longer consume power; or b) no longer house physical servers (whether in a production, test, stage, development, or any other environment).
+In all cases, the term "closed" for data centers shall refer exclusively to tiered or non-tiered data centers that: a) no longer consume power; or b) no longer house physical servers (whether in a production, test, staging, development, or any other environment).
 
 Based on the number of data centers designated by the agencies as already undergoing some part of the closure process, agencies currently plan to close 22% of tiered data centers and 50% of non-tiered, non-cloud data centers, for a total of 44% of all Federal data centers. OMB's goal for the DCOI is informed by, but exceeds, agencies' existing closure plans.
 
