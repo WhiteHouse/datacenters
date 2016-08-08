@@ -30,7 +30,7 @@ This strategy must include (at minimum):
 6. Historical costs and cost savings and cost avoidances due to data center consolidation and optimization through FY2015; and
 7. A statement from the agency CIO stating whether the agency has complied with all reporting requirements in this memorandum and the data center requirements of FITARA. If the agency has not complied with all reporting requirements, the agency must provide a statement describing the reasons for not complying.
 
-Agencies are required to publish their Strategic Plans in a machine-readable JSON format at agency.gov/digitalstrategy under a section entitled, "Data Center Optimization Initiative Strategic Plans," within 60 days of the issuance of this memorandum.  OMB will provide instructions to agencies, including a schema, at management.cio.gov within 30 days of the issuance of this memorandum.
+Agencies are required to publish their Strategic Plans in a machine-readable JSON format at agency.gov/digitalstrategy under a section entitled, "Data Center Optimization Initiative Strategic Plans," within 60 days of the issuance of this memorandum.  OMB will provide instructions to agencies, including a schema, at [management.cio.gov](https://management.cio.gov) within 30 days of the issuance of this memorandum.
 
 The DCOI Strategic Plan will replace existing FDCCI requirements for consolidation plans. Data center consolidation and optimization efforts will continue to be a part of PortfolioStat reviews.
 
