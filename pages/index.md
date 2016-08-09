@@ -19,6 +19,8 @@ This memorandum defines a framework for achieving the data center consolidation 
 
 The public feedback period will be 30 days, closing on April 1, 2016. 
 
+**Note: This guidance has been formalized in (M-16-19)[https://www.whitehouse.gov/sites/default/files/omb/memoranda/2016/m_16_19_1.pdf] so mentions of public comment are no longer valid.**
+
 You may provide feedback in three ways:
 
 1. Content suggestions and discussions are welcome via GitHub “issues.” Each issue is a conversation initiated by a member of the public. We encourage you to browse and [join in on discussions](https://github.com/{{ site.org_name }}/{{ site.repo_name }}/issues) in existing issues, or start a new conversation by opening a [new issue](https://github.com/{{ site.org_name }}/{{ site.repo_name }}/issues/new).
