@@ -36,4 +36,4 @@ And run the site with Jekyll:
 bundle exec jekyll serve --watch
 ```
 
-If all goes well, visit the site at `http://localhost:4000`.
+If all goes well, visit the site at `http://localhost:4000/datacenters/`.
