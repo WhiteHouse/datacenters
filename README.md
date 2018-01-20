@@ -1,4 +1,4 @@
-## 
+##
 
 The [Office of Management and Budget (OMB)](https://www.whitehouse.gov/omb/) has issued the [Data Center Optimization Initiative (DCOI)](https://www.whitehouse.gov/sites/default/files/omb/memoranda/2016/m_16_19_1.pdf) to advance the consolidation and optimization of the Federal Government’s inventory of data centers.  The DCOI supersedes the Federal Data Center Consolidation Initiative (FDCCI) and addresses requirements in the Federal Information Technology Acquisition Reform Act (FITARA).
 
@@ -24,10 +24,16 @@ Install dependencies with Bundler:
 bundle install
 ```
 
+For local development, uncomment the following line in `_config.yml`:
+
+```
+baseurl: /datacenters/
+```
+
 And run the site with Jekyll:
 
 ```
 bundle exec jekyll serve --watch
 ```
 
-If all goes well, visit the site at `http://localhost:4000`.
+If all goes well, visit the site at `http://localhost:4000/datacenters/`.

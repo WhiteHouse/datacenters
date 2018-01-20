@@ -20,7 +20,7 @@
 
                 <li class="{{ current }}">
                     {% if sublink.url %}
-                        <a href="{{ sublink.url }}">{{ sublink.text }}</a>
+                        <a href="{{ site.baseurl }}{{ sublink.url }}">{{ sublink.text }}</a>
                     {% else %}
                         <span class="sidebar-heading" style="font-size:16px;padding:10px; line-height:1.4em;font-weight:normal">{{ sublink.text }}</span>
                     {% endif %}
