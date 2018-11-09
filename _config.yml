@@ -61,9 +61,13 @@ navigation:
 - text: Resources for the Public
   submenu:
     - text: View PDF of Memorandum
-      url: https://www.whitehouse.gov/sites/default/files/omb/memoranda/2016/m_16_19_1.pdf/
-    - text: Implementation & Progress to Date
-      url: /implementation-and-progress/
+      url: https://www.whitehouse.gov/omb/information-for-agencies/memoranda#memoranda-2016
+    - text: Cost Savings Progress to Date
+      url: https://www.itdashboard.gov/drupal/cost-savings
+    - text: Optimization Progress to Date
+      url: https://www.itdashboard.gov/drupal/dcoi-optimization
+    - text: Closure Progress to Date
+      url: https://www.itdashboard.gov/drupal/dcoi-closures 
 
 # sass
 sass:
