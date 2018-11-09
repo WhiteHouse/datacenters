@@ -524,31 +524,31 @@
         }
 
         module.exports = shouldUseNative() ? Object.assign : function (target, source) {
-                var from;
-                var to = toObject(target);
-                var symbols;
+            var from;
+            var to = toObject(target);
+            var symbols;
 
-                for (var s = 1; s < arguments.length; s++) {
-                    from = Object(arguments[s]);
+            for (var s = 1; s < arguments.length; s++) {
+                from = Object(arguments[s]);
 
-                    for (var key in from) {
-                        if (hasOwnProperty.call(from, key)) {
-                            to[key] = from[key];
-                        }
-                    }
-
-                    if (Object.getOwnPropertySymbols) {
-                        symbols = Object.getOwnPropertySymbols(from);
-                        for (var i = 0; i < symbols.length; i++) {
-                            if (propIsEnumerable.call(from, symbols[i])) {
-                                to[symbols[i]] = from[symbols[i]];
-                            }
-                        }
+                for (var key in from) {
+                    if (hasOwnProperty.call(from, key)) {
+                        to[key] = from[key];
                     }
                 }
 
-                return to;
-            };
+                if (Object.getOwnPropertySymbols) {
+                    symbols = Object.getOwnPropertySymbols(from);
+                    for (var i = 0; i < symbols.length; i++) {
+                        if (propIsEnumerable.call(from, symbols[i])) {
+                            to[symbols[i]] = from[symbols[i]];
+                        }
+                    }
+                }
+            }
+
+            return to;
+        };
 
 
         /***/ },
@@ -1064,10 +1064,10 @@
                 if (config != null) {
                     if (process.env.NODE_ENV !== 'production') {
                         process.env.NODE_ENV !== 'production' ? warning(
-                                /* eslint-disable no-proto */
-                                config.__proto__ == null || config.__proto__ === Object.prototype,
-                                /* eslint-enable no-proto */
-                                'React.createElement(...): Expected props argument to be a plain object. ' + 'Properties defined in its prototype chain will be ignored.') : void 0;
+                            /* eslint-disable no-proto */
+                            config.__proto__ == null || config.__proto__ === Object.prototype,
+                            /* eslint-enable no-proto */
+                            'React.createElement(...): Expected props argument to be a plain object. ' + 'Properties defined in its prototype chain will be ignored.') : void 0;
                         ref = !config.hasOwnProperty('ref') || Object.getOwnPropertyDescriptor(config, 'ref').get ? null : config.ref;
                         key = !config.hasOwnProperty('key') || Object.getOwnPropertyDescriptor(config, 'key').get ? null : '' + config.key;
                     } else {
@@ -1186,10 +1186,10 @@
                 if (config != null) {
                     if (process.env.NODE_ENV !== 'production') {
                         process.env.NODE_ENV !== 'production' ? warning(
-                                /* eslint-disable no-proto */
-                                config.__proto__ == null || config.__proto__ === Object.prototype,
-                                /* eslint-enable no-proto */
-                                'React.cloneElement(...): Expected props argument to be a plain object. ' + 'Properties defined in its prototype chain will be ignored.') : void 0;
+                            /* eslint-disable no-proto */
+                            config.__proto__ == null || config.__proto__ === Object.prototype,
+                            /* eslint-enable no-proto */
+                            'React.cloneElement(...): Expected props argument to be a plain object. ' + 'Properties defined in its prototype chain will be ignored.') : void 0;
                     }
                     if (config.ref !== undefined) {
                         // Silently steal the ref from the parent.
@@ -1326,8 +1326,8 @@
                     if (!condition) {
                         var argIndex = 0;
                         var message = 'Warning: ' + format.replace(/%s/g, function () {
-                                return args[argIndex++];
-                            });
+                            return args[argIndex++];
+                        });
                         if (typeof console !== 'undefined') {
                             console.error(message);
                         }
@@ -1610,9 +1610,9 @@
          *
          *     var iteratorFn = getIteratorFn(myIterable);
          *     if (iteratorFn) {
-	 *       var iterator = iteratorFn.call(myIterable);
-	 *       ...
-	 *     }
+         *       var iterator = iteratorFn.call(myIterable);
+         *       ...
+         *     }
          *
          * @param {?object} maybeIterable
          * @return {?function}
@@ -2628,10 +2628,10 @@
              * specification is that you implement a `render` method.
              *
              *   var MyComponent = React.createClass({
-	 *     render: function() {
-	 *       return <div>Hello World</div>;
-	 *     }
-	 *   });
+             *     render: function() {
+             *       return <div>Hello World</div>;
+             *     }
+             *   });
              *
              * The class specification supports a specific protocol of methods that have
              * special meaning (e.g. `render`). See `ReactClassInterface` for
@@ -2703,11 +2703,11 @@
                  * as the initial value of `this.state`.
                  *
                  *   getInitialState: function() {
-	   *     return {
-	   *       isOn: false,
-	   *       fooBaz: new BazFoo()
-	   *     }
-	   *   }
+                 *     return {
+                 *       isOn: false,
+                 *       fooBaz: new BazFoo()
+                 *     }
+                 *   }
                  *
                  * @return {object}
                  * @optional
@@ -2728,9 +2728,9 @@
                  * it must not have side effects.
                  *
                  *   render: function() {
-	   *     var name = this.props.name;
-	   *     return <div>Hello, {name}!</div>;
-	   *   }
+                 *     var name = this.props.name;
+                 *     return <div>Hello, {name}!</div>;
+                 *   }
                  *
                  * @return {ReactComponent}
                  * @nosideeffects
@@ -2768,10 +2768,10 @@
                  * state using `this.setState`. Current props are accessed via `this.props`.
                  *
                  *   componentWillReceiveProps: function(nextProps, nextContext) {
-	   *     this.setState({
-	   *       likesIncreasing: nextProps.likeCount > this.props.likeCount
-	   *     });
-	   *   }
+                 *     this.setState({
+                 *       likesIncreasing: nextProps.likeCount > this.props.likeCount
+                 *     });
+                 *   }
                  *
                  * NOTE: There is no equivalent `componentWillReceiveState`. An incoming prop
                  * transition may cause a state change, but the opposite is not true. If you
@@ -2791,10 +2791,10 @@
                  * update.
                  *
                  *   shouldComponentUpdate: function(nextProps, nextState, nextContext) {
-	   *     return !equal(nextProps, this.props) ||
-	   *       !equal(nextState, this.state) ||
-	   *       !equal(nextContext, this.context);
-	   *   }
+                 *     return !equal(nextProps, this.props) ||
+                 *       !equal(nextState, this.state) ||
+                 *       !equal(nextContext, this.context);
+                 *   }
                  *
                  * @param {object} nextProps
                  * @param {?object} nextState
@@ -3991,18 +3991,18 @@
          *
          *   var Props = require('ReactPropTypes');
          *   var MyArticle = React.createClass({
-	 *     propTypes: {
-	 *       // An optional string prop named "description".
-	 *       description: Props.string,
-	 *
-	 *       // A required enum prop named "category".
-	 *       category: Props.oneOf(['News','Photos']).isRequired,
-	 *
-	 *       // A prop named "dialog" that requires an instance of Dialog.
-	 *       dialog: Props.instanceOf(Dialog).isRequired
-	 *     },
-	 *     render: function() { ... }
-	 *   });
+         *     propTypes: {
+         *       // An optional string prop named "description".
+         *       description: Props.string,
+         *
+         *       // A required enum prop named "category".
+         *       category: Props.oneOf(['News','Photos']).isRequired,
+         *
+         *       // A prop named "dialog" that requires an instance of Dialog.
+         *       dialog: Props.instanceOf(Dialog).isRequired
+         *     },
+         *     render: function() { ... }
+         *   });
          *
          * A more formal specification of how these methods are used:
          *
@@ -4013,21 +4013,21 @@
          * allows the creation of custom validation functions. For example:
          *
          *  var MyLink = React.createClass({
-	 *    propTypes: {
-	 *      // An optional string or URI prop named "href".
-	 *      href: function(props, propName, componentName) {
-	 *        var propValue = props[propName];
-	 *        if (propValue != null && typeof propValue !== 'string' &&
-	 *            !(propValue instanceof URI)) {
-	 *          return new Error(
-	 *            'Expected a string or an URI for ' + propName + ' in ' +
-	 *            componentName
-	 *          );
-	 *        }
-	 *      }
-	 *    },
-	 *    render: function() {...}
-	 *  });
+         *    propTypes: {
+         *      // An optional string or URI prop named "href".
+         *      href: function(props, propName, componentName) {
+         *        var propValue = props[propName];
+         *        if (propValue != null && typeof propValue !== 'string' &&
+         *            !(propValue instanceof URI)) {
+         *          return new Error(
+         *            'Expected a string or an URI for ' + propName + ' in ' +
+         *            componentName
+         *          );
+         *        }
+         *      }
+         *    },
+         *    render: function() {...}
+         *  });
          *
          * @internal
          */
@@ -8097,20 +8097,20 @@
              * Refs are available when mounted and updated during reconciliation.
              *
              *   var MyComponent = React.createClass({
-	 *     render: function() {
-	 *       return (
-	 *         <div onClick={this.handleClick}>
-	 *           <CustomComponent ref="custom" />
-	 *         </div>
-	 *       );
-	 *     },
-	 *     handleClick: function() {
-	 *       this.refs.custom.handleClick();
-	 *     },
-	 *     componentDidMount: function() {
-	 *       this.refs.custom.initialize();
-	 *     }
-	 *   });
+             *     render: function() {
+             *       return (
+             *         <div onClick={this.handleClick}>
+             *           <CustomComponent ref="custom" />
+             *         </div>
+             *       );
+             *     },
+             *     handleClick: function() {
+             *       this.refs.custom.handleClick();
+             *     },
+             *     componentDidMount: function() {
+             *       this.refs.custom.initialize();
+             *     }
+             *   });
              *
              * Refs should rarely be used. When refs are used, they should only be done to
              * control data that is not handled by React's data flow.
@@ -10054,7 +10054,7 @@
                     // not null/false
                     !!obj && (
                         // arrays are objects, NodeLists are functions in Safari
-                    typeof obj == 'object' || typeof obj == 'function') &&
+                        typeof obj == 'object' || typeof obj == 'function') &&
                     // quacks like an array
                     'length' in obj &&
                     // not window
@@ -10063,11 +10063,11 @@
                     // a 'select' element has 'length' and 'item' properties on IE8
                     typeof obj.nodeType != 'number' && (
                         // a real array
-                    Array.isArray(obj) ||
-                    // arguments
-                    'callee' in obj ||
-                    // HTMLCollection/NodeList
-                    'item' in obj)
+                        Array.isArray(obj) ||
+                        // arguments
+                        'callee' in obj ||
+                        // HTMLCollection/NodeList
+                        'item' in obj)
                 );
             }
 
@@ -10080,9 +10080,9 @@
              *   var createArrayFromMixed = require('createArrayFromMixed');
              *
              *   function takesOneOrMoreThings(things) {
-	 *     things = createArrayFromMixed(things);
-	 *     ...
-	 *   }
+             *     things = createArrayFromMixed(things);
+             *     ...
+             *   }
              *
              * This allows you to treat `things' as an array, but accept scalars in the API.
              *
@@ -13883,8 +13883,8 @@
             if (process.env.NODE_ENV !== 'production') {
                 setChildrenForInstrumentation = function (children) {
                     ReactInstrumentation.debugTool.onSetChildren(this._debugID, children ? Object.keys(children).map(function (key) {
-                            return children[key]._debugID;
-                        }) : []);
+                        return children[key]._debugID;
+                    }) : []);
                 };
             }
 
@@ -15354,7 +15354,7 @@
                     }
                     !(
                         // TODO: An `isValidNode` function would probably be more appropriate
-                    renderedComponent === null || renderedComponent === false || ReactElement.isValidElement(renderedComponent)) ? process.env.NODE_ENV !== 'production' ? invariant(false, '%s.render(): A valid React element (or null) must be returned. You may have ' + 'returned undefined, an array or some other invalid object.', this.getName() || 'ReactCompositeComponent') : invariant(false) : void 0;
+                        renderedComponent === null || renderedComponent === false || ReactElement.isValidElement(renderedComponent)) ? process.env.NODE_ENV !== 'production' ? invariant(false, '%s.render(): A valid React element (or null) must be returned. You may have ' + 'returned undefined, an array or some other invalid object.', this.getName() || 'ReactCompositeComponent') : invariant(false) : void 0;
 
                     return renderedComponent;
                 },
@@ -20068,8 +20068,8 @@
                 _renderSubtreeIntoContainer: function (parentComponent, nextElement, container, callback) {
                     ReactUpdateQueue.validateCallback(callback, 'ReactDOM.render');
                     !ReactElement.isValidElement(nextElement) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'ReactDOM.render(): Invalid component element.%s', typeof nextElement === 'string' ? ' Instead of passing a string like \'div\', pass ' + 'React.createElement(\'div\') or <div />.' : typeof nextElement === 'function' ? ' Instead of passing a class like Foo, pass ' + 'React.createElement(Foo) or <Foo />.' :
-                                    // Check if it quacks like an element
-                                    nextElement != null && nextElement.props !== undefined ? ' This may be caused by unintentionally loading two independent ' + 'copies of React.' : '') : invariant(false) : void 0;
+                        // Check if it quacks like an element
+                        nextElement != null && nextElement.props !== undefined ? ' This may be caused by unintentionally loading two independent ' + 'copies of React.' : '') : invariant(false) : void 0;
 
                     process.env.NODE_ENV !== 'production' ? warning(!container || !container.tagName || container.tagName.toUpperCase() !== 'BODY', 'render(): Rendering components directly into document.body is ' + 'discouraged, since its children are often manipulated by third-party ' + 'scripts and browser extensions. This may lead to subtle ' + 'reconciliation issues. Try rendering into a container element created ' + 'for your app.') : void 0;
 
@@ -20083,8 +20083,8 @@
                         if (shouldUpdateReactComponent(prevElement, nextElement)) {
                             var publicInst = prevComponent._renderedComponent.getPublicInstance();
                             var updatedCallback = callback && function () {
-                                    callback.call(publicInst);
-                                };
+                                callback.call(publicInst);
+                            };
                             ReactMount._updateRootComponent(prevComponent, nextWrappedElement, container, updatedCallback);
                             return publicInst;
                         } else {
@@ -20681,9 +20681,9 @@
                         var formData = (0, _utils.getDefaultFormState)(schema, props.formData, definitions);
 
                         var _ref = mustValidate ? this.validate(formData, schema) : {
-                                errors: state.errors || [],
-                                errorSchema: state.errorSchema || {}
-                            };
+                            errors: state.errors || [],
+                            errorSchema: state.errorSchema || {}
+                        };
 
                         var errors = _ref.errors;
                         var errorSchema = _ref.errorSchema;
@@ -20792,14 +20792,14 @@
                                 registry: registry,
                                 safeRenderCompletion: safeRenderCompletion }),
                             children ? children : _react2.default.createElement(
-                                    "p",
-                                    null,
-                                    _react2.default.createElement(
-                                        "button",
-                                        { type: "submit", className: "btn btn-info" },
-                                        "Submit"
-                                    )
+                                "p",
+                                null,
+                                _react2.default.createElement(
+                                    "button",
+                                    { type: "submit", className: "btn btn-info" },
+                                    "Submit"
                                 )
+                            )
                         );
                     }
                 }]);
@@ -21427,8 +21427,8 @@
 
             function isFixedItems(schema) {
                 return Array.isArray(schema.items) && schema.items.length > 0 && schema.items.every(function (item) {
-                        return isObject(item);
-                    });
+                    return isObject(item);
+                });
             }
 
             function allowAdditionalItems(schema) {
@@ -21652,31 +21652,31 @@
 
             // That's not how node.js implements it but the exposed api is the same.
             exports.setImmediate = typeof setImmediate === "function" ? setImmediate : function(fn) {
-                    var id = nextImmediateId++;
-                    var args = arguments.length < 2 ? false : slice.call(arguments, 1);
+                var id = nextImmediateId++;
+                var args = arguments.length < 2 ? false : slice.call(arguments, 1);
 
-                    immediateIds[id] = true;
+                immediateIds[id] = true;
 
-                    nextTick(function onNextTick() {
-                        if (immediateIds[id]) {
-                            // fn.call() is faster so we optimize for the common use-case
-                            // @see http://jsperf.com/call-apply-segu
-                            if (args) {
-                                fn.apply(null, args);
-                            } else {
-                                fn.call(null);
-                            }
-                            // Prevent ids from leaking
-                            exports.clearImmediate(id);
+                nextTick(function onNextTick() {
+                    if (immediateIds[id]) {
+                        // fn.call() is faster so we optimize for the common use-case
+                        // @see http://jsperf.com/call-apply-segu
+                        if (args) {
+                            fn.apply(null, args);
+                        } else {
+                            fn.call(null);
                         }
-                    });
+                        // Prevent ids from leaking
+                        exports.clearImmediate(id);
+                    }
+                });
 
-                    return id;
-                };
+                return id;
+            };
 
             exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate : function(id) {
-                    delete immediateIds[id];
-                };
+                delete immediateIds[id];
+            };
             /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(172).setImmediate, __webpack_require__(172).clearImmediate))
 
         /***/ },
@@ -21997,11 +21997,11 @@
     /***/ function(module, exports, __webpack_require__) {
 
         /* WEBPACK VAR INJECTION */(function(Buffer, global) {/*!
-         * The buffer module from node.js, for the browser.
-         *
-         * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
-         * @license  MIT
-         */
+	 * The buffer module from node.js, for the browser.
+	 *
+	 * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+	 * @license  MIT
+	 */
             /* eslint-disable no-proto */
 
             'use strict'
@@ -22811,8 +22811,8 @@
             }
 
             /*
-             * Need to make sure that buffer isn't trying to write out of bounds.
-             */
+	 * Need to make sure that buffer isn't trying to write out of bounds.
+	 */
             function checkOffset (offset, ext, length) {
                 if ((offset % 1) !== 0 || offset < 0) throw new RangeError('offset is not uint')
                 if (offset + ext > length) throw new RangeError('Trying to access beyond buffer length')
@@ -22878,8 +22878,8 @@
 
                 return (this[offset] * 0x1000000) +
                     ((this[offset + 1] << 16) |
-                    (this[offset + 2] << 8) |
-                    this[offset + 3])
+                        (this[offset + 2] << 8) |
+                        this[offset + 3])
             }
 
             Buffer.prototype.readIntLE = function readIntLE (offset, byteLength, noAssert) {
@@ -23774,8 +23774,8 @@
         var toString = {}.toString;
 
         module.exports = Array.isArray || function (arr) {
-                return toString.call(arr) == '[object Array]';
-            };
+            return toString.call(arr) == '[object Array]';
+        };
 
 
         /***/ },
@@ -25294,9 +25294,9 @@
                                 title: title,
                                 required: required }),
                             schema.description ? _react2.default.createElement(ArrayFieldDescription, {
-                                    DescriptionField: DescriptionField,
-                                    idSchema: idSchema,
-                                    description: schema.description }) : null,
+                                DescriptionField: DescriptionField,
+                                idSchema: idSchema,
+                                description: schema.description }) : null,
                             _react2.default.createElement(
                                 "div",
                                 { className: "row array-item-list" },
@@ -25415,10 +25415,10 @@
                                 title: title,
                                 required: required }),
                             schema.description ? _react2.default.createElement(
-                                    "div",
-                                    { className: "field-description" },
-                                    schema.description
-                                ) : null,
+                                "div",
+                                { className: "field-description" },
+                                schema.description
+                            ) : null,
                             _react2.default.createElement(
                                 "div",
                                 { className: "row array-item-list" },
@@ -25442,8 +25442,8 @@
                                 })
                             ),
                             additionalSchema ? _react2.default.createElement(AddButton, {
-                                    onClick: this.onAddClick,
-                                    disabled: disabled || readonly }) : null
+                                onClick: this.onAddClick,
+                                disabled: disabled || readonly }) : null
                         );
                     }
                 }, {
@@ -25481,17 +25481,17 @@
                                     readonly: this.props.readonly })
                             ),
                             removable ? _react2.default.createElement(
-                                    "div",
-                                    { className: "col-xs-2 array-item-remove text-right" },
-                                    _react2.default.createElement(
-                                        "button",
-                                        { type: "button", className: "btn btn-danger col-xs-12",
-                                            tabIndex: "-1",
-                                            disabled: disabled || readonly,
-                                            onClick: this.onDropIndexClick(index) },
-                                        "Delete"
-                                    )
-                                ) : null
+                                "div",
+                                { className: "col-xs-2 array-item-remove text-right" },
+                                _react2.default.createElement(
+                                    "button",
+                                    { type: "button", className: "btn btn-danger col-xs-12",
+                                        tabIndex: "-1",
+                                        disabled: disabled || readonly,
+                                        onClick: this.onDropIndexClick(index) },
+                                    "Delete"
+                                )
+                            ) : null
                         );
                     }
                 }, {
@@ -26023,13 +26023,13 @@
                             "fieldset",
                             null,
                             title ? _react2.default.createElement(TitleField, {
-                                    id: idSchema.id + "__title",
-                                    title: title,
-                                    required: required }) : null,
+                                id: idSchema.id + "__title",
+                                title: title,
+                                required: required }) : null,
                             schema.description ? _react2.default.createElement(DescriptionField, {
-                                    id: idSchema.id + "__description",
-                                    description: schema.description
-                                }) : null,
+                                id: idSchema.id + "__description",
+                                description: schema.description
+                            }) : null,
                             orderedProperties.map(function (name, index) {
                                 return _react2.default.createElement(SchemaField, { key: index,
                                     name: name,
@@ -27050,8 +27050,8 @@
                 host = auth + this.host;
             } else if (this.hostname) {
                 host = auth + (this.hostname.indexOf(':') === -1 ?
-                        this.hostname :
-                        '[' + this.hostname + ']');
+                    this.hostname :
+                    '[' + this.hostname + ']');
                 if (this.port) {
                     host += ':' + this.port;
                 }
@@ -27193,7 +27193,7 @@
                     relative.pathname && relative.pathname.charAt(0) === '/'
                 ),
                 mustEndAbs = (isRelAbs || isSourceAbs ||
-                (result.host && relative.pathname)),
+                    (result.host && relative.pathname)),
                 removeAllDots = mustEndAbs,
                 srcPath = result.pathname && result.pathname.split('/') || [],
                 relPath = relative.pathname && relative.pathname.split('/') || [],
@@ -27288,8 +27288,8 @@
             // then it must NOT get a trailing slash.
             var last = srcPath.slice(-1)[0];
             var hasTrailingSlash = (
-            (result.host || relative.host) && (last === '.' || last === '..') ||
-            last === '');
+                (result.host || relative.host) && (last === '.' || last === '..') ||
+                last === '');
 
             // strip single dots, resolve double dots to parent dir
             // if the path tries to go above the root, `up` ends up > 0
@@ -28979,8 +28979,8 @@
         };
 
         Object.defineProperty(ValidatorResult.prototype, "valid", { get: function() {
-            return !this.errors.length;
-        } });
+                return !this.errors.length;
+            } });
 
         /**
          * Describes a problem with a Schema which prevents validation of an instance
@@ -29193,16 +29193,15 @@
 
         var schema = {
             "$schema": "http://json-schema.org/draft-04/schema#",
-            "version": "fy2017",
+            "version": "fy2019",
             "id": "https://omb.max.gov/schemas/DCOIStrategicPlans",
             "name": "/",
-            "title": "DCOI Strategic Plan Schema version fy2017",
+            "title": "DCOI Strategic Plan Schema version fy2019",
             "description": "Schema definition for the collection of the CFO Act agencies' DCOI Strategic Plans",
             "type": "object",
             "required": [
                 "optimizationMetrics",
-                "tieredClosures",
-                "nontieredClosures",
+                "closures",
                 "costSavings"
             ],
             "properties": {
@@ -29213,178 +29212,40 @@
                     "description": "The set of DCOI optimization metrics",
                     "type": "object",
                     "required": [
-                        "facilityUtilization",
                         "energyMetering",
-                        "pue",
                         "virtualization",
-                        "tieredServerUtAutoMonitoring",
-                        "nontieredServerUtAutoMonitoring"
+                        "underutilizedServers",
+                        "availability"
                     ],
                     "properties": {
-                        "facilityUtilization": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/facilityUtilization",
-                            "name": "facilityUtilization",
-                            "description": "Targets for a given agency for each fiscal year in the facility utilization optimization metric",
-                            "title": "facility utilization",
-                            "type": "object",
-                            "required": [
-                                "fy16Planned",
-                                "fy16Achieved",
-                                "fy17Planned",
-                                "fy18Planned"
-                            ],
-                            "properties": {
-                                "fy18OMBtarget": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/facilityUtilization/fy18OMBTarget",
-                                    "name": "fy18OMBtarget",
-                                    "title": "fy18OMBTarget",
-                                    "description": "Value your agency must reach by the end of fy 2018 in the given optimization metric; set by OMB.",
-                                    "type": "number",
-                                    "minimum": 80,
-                                    "maximum": 80,
-                                    "default": 80
-                                },
-                                "fy16Planned": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/facilityUtilization/fy16Planned",
-                                    "name": "fy16Planned",
-                                    "title": "fy16Planned",
-                                    "description": "Value your agency plans to reach by the end of FY 16 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 100.00
-                                },
-                                "fy16Achieved": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/facilityUtilization/fy16Achieved",
-                                    "name": "fy16Achieved",
-                                    "title": "fy16Achieved",
-                                    "description": "Value your agency achieved by the end of FY 16 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 100.00
-                                },
-                                "fy17Planned": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/facilityUtilization/fy17Planned",
-                                    "name": "fy17Planned",
-                                    "title": "fy17Planned",
-                                    "description": "Value your agency plans to reach by the end of FY 17 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 100.00
-                                },
-                                "fy17Achieved": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/facilityUtilization/fy17Achieved",
-                                    "name": "fy17Achieved",
-                                    "title": "fy17Achieved",
-                                    "description": "Value your agency achieved by the end of FY 17 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 100.00
-                                },
-                                "fy18Planned": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/facilityUtilization/fy18Planned",
-                                    "name": "fy18Planned",
-                                    "title": "fy18Planned",
-                                    "description": "Value your agency plans to achieve by the end of FY 18 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 100.00
-                                },
-                                "fy18Achieved": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/facilityUtilization/fy18Achieved",
-                                    "name": "fy18Achieved",
-                                    "title": "fy18Achieved",
-                                    "description": "Value your agency achieved by the end of FY 18 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 100.00
-                                },
-                                "explanationForUnmetPlannedValues": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/facilityUtilization/explanationForUnmetPlannedValue",
-                                    "name": "explanationForUnmetPlannedValues",
-                                    "title": "explanationForUnmetPlannedValue",
-                                    "description": "An explanation for why your agency did not meet your planned values in the given optimization metric.",
-                                    "type": "string",
-                                    "minLength": 0,
-                                    "maxLength": 10000
-                                }
-                            }
-                        },
                         "energyMetering": {
                             "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/energyMetering",
                             "name": "energyMetering",
                             "description": "Targets for a given agency for each fiscal year in the facility utilization optimization metric",
-                            "title": "energyMetering",
+                            "title": "Energy Metering",
                             "type": "object",
                             "required": [
-                                "fy16Planned",
-                                "fy16Achieved",
-                                "fy17Planned",
-                                "fy18Planned"
+                                "fy19Planned",
+                                "fy20Planned"
                             ],
                             "properties": {
-                                "fy18OMBtarget": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/energyMetering/fy18OMBTarget",
-                                    "name": "fy18OMBtarget",
-                                    "title": "fy18OMBTarget",
-                                    "description": "Value your agency must reach by the end of fy 2018 in the given optimization metric; set by OMB.",
-                                    "type": "number",
-                                    "minimum": 100,
-                                    "maximum": 100,
-                                    "default": 100
-                                },
-                                "fy16Planned": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/energyMetering/fy16Planned",
-                                    "name": "fy16Planned",
-                                    "title": "fy16Planned",
-                                    "description": "Value your agency plans to reach by the end of FY 16 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 100.00
-                                },
-                                "fy16Achieved": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/energyMetering/fy16Achieved",
-                                    "name": "fy16Achieved",
-                                    "title": "fy16Achieved",
-                                    "description": "Value your agency achieved by the end of FY 16 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 100.00
-                                },
-                                "fy17Planned": {
+                                "fy19Planned": {
                                     "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/energyMetering/fy17Planned",
-                                    "name": "fy17Planned",
-                                    "title": "fy17Planned",
-                                    "description": "Value your agency plans to reach by the end of FY 17 in the given optimization metric.",
+                                    "name": "fy19Planned",
+                                    "title": "fy19Planned",
+                                    "description": "Value your agency plans to reach by the end of fiscal year 2017 in the given optimization metric.",
                                     "type": "number",
                                     "minimum": 0,
-                                    "maximum": 100.00
+                                    "maximum": 1000
                                 },
-                                "fy17Achieved": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/energyMetering/fy17Achieved",
-                                    "name": "fy17Achieved",
-                                    "title": "fy17Achieved",
-                                    "description": "Value your agency achieved by the end of FY 17 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 100.00
-                                },
-                                "fy18Planned": {
+                                "fy20Planned": {
                                     "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/energyMetering/fy18Planned",
-                                    "name": "fy18Planned",
-                                    "title": "fy18Planned",
-                                    "description": "Value your agency plans to achieve by the end of FY 18 in the given optimization metric.",
+                                    "name": "fy20Planned",
+                                    "title": "fy20Planned",
+                                    "description": "Value your agency plans to achieve by the end of fiscal year 2018 in the given optimization metric.",
                                     "type": "number",
                                     "minimum": 0,
-                                    "maximum": 100.00
-                                },
-                                "fy18Achieved": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/energyMetering/fy18Achieved",
-                                    "name": "fy18Achieved",
-                                    "title": "fy18Achieved",
-                                    "description": "Value your agency achieved by the end of FY 18 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 100.00
+                                    "maximum": 1000
                                 },
                                 "explanationForUnmetPlannedValues": {
                                     "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/energyMetering/explanationForUnmetPlannedValue",
@@ -29397,351 +29258,120 @@
                                 }
                             }
                         },
-                        "pue": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/pue/",
-                            "name": "pue",
-                            "description": "Targets for a given agency for each fiscal year in the pue optimization metric",
-                            "title": "pue",
-                            "type": "object",
-                            "required": [
-                                "fy16Planned",
-                                "fy16Achieved",
-                                "fy17Planned",
-                                "fy18Planned"
-                            ],
-                            "properties": {
-                                "fy18OMBtarget": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/pue/fy18OMBTarget",
-                                    "name": "fy18OMBtarget",
-                                    "title": "fy18OMBTarget",
-                                    "description": "Value your agency must reach by the end of fy 2018 in the given optimization metric; set by OMB.",
-                                    "type": "number",
-                                    "minimum": 1.40,
-                                    "maximum": 1.50
-                                },
-                                "fy16Planned": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/pue/fy16Planned",
-                                    "name": "fy16Planned",
-                                    "title": "fy16Planned",
-                                    "description": "Value your agency plans to reach by the end of FY 16 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 1,
-                                    "maximum": 5.00
-                                },
-                                "fy16Achieved": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/pue/fy16Achieved",
-                                    "name": "fy16Achieved",
-                                    "title": "fy16Achieved",
-                                    "description": "Value your agency achieved by the end of FY 16 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 1,
-                                    "maximum": 5.00
-                                },
-                                "fy17Planned": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/pue/fy17Planned",
-                                    "name": "fy17Planned",
-                                    "title": "fy17Planned",
-                                    "description": "Value your agency plans to reach by the end of FY 17 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 1,
-                                    "maximum": 5.00
-                                },
-                                "fy17Achieved": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/pue/fy17Achieved",
-                                    "name": "fy17Achieved",
-                                    "title": "fy17Achieved",
-                                    "description": "Value your agency achieved by the end of FY 17 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 1,
-                                    "maximum": 5.00
-                                },
-                                "fy18Planned": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/pue/fy18Planned",
-                                    "name": "fy18Planned",
-                                    "title": "fy18Planned",
-                                    "description": "Value your agency plans to achieve by the end of FY 18 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 1,
-                                    "maximum": 5.00
-                                },
-                                "fy18Achieved": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/pue/fy18Achieved",
-                                    "name": "fy18Achieved",
-                                    "title": "fy18Achieved",
-                                    "description": "Value your agency achieved by the end of FY 18 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 5.00
-                                },
-                                "explanationForUnmetPlannedValues": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/pue/explanationForUnmetPlannedValue",
-                                    "name": "explanationForUnmetPlannedValues",
-                                    "title": "explanationForUnmetPlannedValue",
-                                    "description": "An explanation for an unmet planned value in the given optimization metric.",
-                                    "type": "string",
-                                    "minLength": 0,
-                                    "maxLength": 10000
-                                }
-                            }
-                        },
                         "virtualization": {
                             "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/virtualization",
                             "name": "virtualization",
                             "description": "Targets for a given agency for each fiscal year in the virtualization optimization metric",
-                            "title": "virtualization",
+                            "title": "Virtualization",
                             "type": "object",
                             "required": [
-                                "fy16Planned",
-                                "fy16Achieved",
-                                "fy17Planned",
-                                "fy18Planned"
+                                "fy19Planned",
+                                "fy20Planned"
                             ],
                             "properties": {
-                                "fy18OMBtarget": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/virtualization/fy18OMBTarget",
-                                    "name": "fy18OMBtarget",
-                                    "title": "fy18OMBTarget",
-                                    "description": "Value your agency must reach by the end of fy 2018 in the given optimization metric; set by OMB.",
+                                "fy19Planned": {
+                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/virtualization/fy19Planned",
+                                    "name": "fy19Planned",
+                                    "title": "fy19Planned",
+                                    "description": "Value your agency plans to reach by the end of fiscal year 2017 in the given optimization metric.",
                                     "type": "number",
-                                    "minimum": 4,
-                                    "maximum": 4,
-                                    "default": 4
+                                    "minimum": 0,
+                                    "maximum": 100000
                                 },
-                                "fy16Planned": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/virtualization/fy16Planned",
-                                    "name": "fy16Planned",
-                                    "title": "fy16Planned",
-                                    "description": "Value your agency plans to reach by the end of FY 16 in the given optimization metric.",
+                                "fy20Planned": {
+                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/virtualization/fy20Planned",
+                                    "name": "fy20Planned",
+                                    "title": "fy20Planned",
+                                    "description": "Value your agency plans to achieve by the end of fiscal year 2018 in the given optimization metric.",
                                     "type": "number",
-                                    "minimum": 1,
-                                    "maximum": 50.00
-                                },
-                                "fy16Achieved": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/virtualization/fy16Achieved",
-                                    "name": "fy16Achieved",
-                                    "title": "fy16Achieved",
-                                    "description": "Value your agency achieved by the end of FY 16 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 1,
-                                    "maximum": 50.00
-                                },
-                                "fy17Planned": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/virtualization/fy17Planned",
-                                    "name": "fy17Planned",
-                                    "title": "fy17Planned",
-                                    "description": "Value your agency plans to reach by the end of FY 17 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 1,
-                                    "maximum": 50.00
-                                },
-                                "fy17Achieved": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/virtualization/fy17Achieved",
-                                    "name": "fy17Achieved",
-                                    "title": "fy17Achieved",
-                                    "description": "Value your agency achieved by the end of FY 17 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 1,
-                                    "maximum": 50.00
-                                },
-                                "fy18Planned": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/virtualization/fy18Planned",
-                                    "name": "fy18Planned",
-                                    "title": "fy18Planned",
-                                    "description": "Value your agency plans to achieve by the end of FY 18 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 1,
-                                    "maximum": 50.00
-                                },
-                                "fy18Achieved": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/virtualization/fy18Achieved",
-                                    "name": "fy18Achieved",
-                                    "title": "fy18Achieved",
-                                    "description": "Value your agency achieved by the end of FY 18 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 1,
-                                    "maximum": 50.00
+                                    "minimum": 0,
+                                    "maximum": 100000
                                 },
                                 "explanationForUnmetPlannedValues": {
                                     "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/virtualization/explanationForUnmetPlannedValue",
                                     "name": "explanationForUnmetPlannedValues",
                                     "title": "explanationForUnmetPlannedValue",
-                                    "description": "An explanation for an unmet planned value in the given optimization metric.",
+                                    "description": "Explanation for an unmet planned value in the given optimization metric.",
                                     "type": "string",
                                     "minLength": 0,
                                     "maxLength": 10000
                                 }
                             }
                         },
-                        "tieredServerUtAutoMonitoring": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/tieredServerUtAutoMonitoring",
-                            "name": "tieredServerUtAutoMonitoring",
-                            "description": "Targets for a given agency for each fiscal year in the tiered Server Utilization and Automated Monitoring optimization metric",
-                            "title": "tieredServerUtAutoMonitoring",
+                        "underutilizedServers": {
+                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/underutilizedServers",
+                            "name": "underutilizedServers",
+                            "description": "Targets for a given agency for each fiscal year in the underutilized servers optimization metric",
+                            "title": "Underutilized Servers",
                             "type": "object",
                             "required": [
-                                "fy16Planned",
-                                "fy16Achieved",
-                                "fy17Planned",
-                                "fy18Planned"
+                                "fy19Planned",
+                                "fy20Planned"
                             ],
                             "properties": {
-                                "fy18OMBtarget": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/tieredServerUtAutoMonitoring/fy18OMBTarget",
-                                    "name": "fy18OMBtarget",
-                                    "title": "fy18OMBTarget",
-                                    "description": "Value your agency must reach by the end of fy 2018 in the given optimization metric; set by OMB.",
-                                    "type": "number",
-                                    "minimum": 65,
-                                    "maximum": 65,
-                                    "default": 65
-                                },
-                                "fy16Planned": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/tieredServerUtAutoMonitoring/fy16Planned",
-                                    "name": "fy16Planned",
-                                    "title": "fy16Planned",
-                                    "description": "Value your agency plans to reach by the end of FY 16 in the given optimization metric.",
+                                "fy19Planned": {
+                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/underutilizedServers/fy19Planned",
+                                    "name": "fy19Planned",
+                                    "title": "fy19Planned",
+                                    "description": "Value your agency plans to reach by the end of fiscal year 2017 in the given optimization metric.",
                                     "type": "number",
                                     "minimum": 0,
-                                    "maximum": 100.00
+                                    "maximum": 100000
                                 },
-                                "fy16Achieved": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/tieredServerUtAutoMonitoring/fy16Achieved",
-                                    "name": "fy16Achieved",
-                                    "title": "fy16Achieved",
-                                    "description": "Value your agency achieved by the end of FY 16 in the given optimization metric.",
+                                "fy20Planned": {
+                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/underutilizedServers/fy20Planned",
+                                    "name": "fy20Planned",
+                                    "title": "fy20Planned",
+                                    "description": "Value your agency plans to achieve by the end of fiscal year 2018 in the given optimization metric.",
                                     "type": "number",
                                     "minimum": 0,
-                                    "maximum": 100.00
-                                },
-                                "fy17Planned": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/tieredServerUtAutoMonitoring/fy17Planned",
-                                    "name": "fy17Planned",
-                                    "title": "fy17Planned",
-                                    "description": "Value your agency plans to reach by the end of FY 17 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 100.00
-                                },
-                                "fy17Achieved": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/tieredServerUtAutoMonitoring/fy17Achieved",
-                                    "name": "fy17Achieved",
-                                    "title": "fy17Achieved",
-                                    "description": "Value your agency achieved by the end of FY 17 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 100.00
-                                },
-                                "fy18Planned": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/tieredServerUtAutoMonitoring/fy18Planned",
-                                    "name": "fy18Planned",
-                                    "title": "fy18Planned",
-                                    "description": "Value your agency plans to achieve by the end of FY 18 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 100.00
-                                },
-                                "fy18Achieved": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/tieredServerUtAutoMonitoring/fy18Achieved",
-                                    "name": "fy18Achieved",
-                                    "title": "fy18Achieved",
-                                    "description": "Value your agency achieved by the end of FY 18 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 100.00
+                                    "maximum": 100000
                                 },
                                 "explanationForUnmetPlannedValues": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/tieredServerUtAutoMonitoring/explanationForUnmetPlannedValue",
+                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/underutilizedServers/explanationForUnmetPlannedValue",
                                     "name": "explanationForUnmetPlannedValues",
                                     "title": "explanationForUnmetPlannedValue",
-                                    "description": "An explanation for an unmet planned value in the given optimization metric.",
+                                    "description": "Explanation for an unmet planned value in the given optimization metric.",
                                     "type": "string",
                                     "minLength": 0,
                                     "maxLength": 10000
                                 }
                             }
                         },
-                        "nontieredServerUtAutoMonitoring": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/nontieredServerUtAutoMonitoring",
-                            "name": "nontieredServerUtAutoMonitoring",
-                            "description": "Targets for a given agency for each fiscal year in the nontiered server utilization and automated monitoring optimization metric",
-                            "title": "nontieredServerUtAutoMonitoring",
+                        "availability": {
+                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/availability",
+                            "name": "availability",
+                            "description": "Targets for a given agency for each fiscal year in the availability optimization metric",
+                            "title": "Availability",
                             "type": "object",
                             "required": [
-                                "fy16Planned",
-                                "fy16Achieved",
-                                "fy17Planned",
-                                "fy18Planned"
+                                "fy19Planned",
+                                "fy20Planned"
                             ],
                             "properties": {
-                                "fy18OMBtarget": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/nontieredServerUtAutoMonitoring/fy18OMBTarget",
-                                    "name": "fy18OMBtarget",
-                                    "title": "fy18OMBTarget",
-                                    "description": "Value your agency must reach by the end of fy 2018 in the given optimization metric; set by OMB.",
-                                    "type": "number",
-                                    "minimum": 65,
-                                    "maximum": 65,
-                                    "default": 65
-                                },
-                                "fy16Planned": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/nontieredServerUtAutoMonitoring/fy16Planned",
-                                    "name": "fy16Planned",
-                                    "title": "fy16Planned",
-                                    "description": "Value your agency plans to reach by the end of FY 16 in the given optimization metric.",
+                                "fy19Planned": {
+                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/availability/fy19Planned",
+                                    "name": "fy19Planned",
+                                    "title": "fy19Planned",
+                                    "description": "Value your agency plans to reach by the end of fiscal year 2017 in the given optimization metric.",
                                     "type": "number",
                                     "minimum": 0,
                                     "maximum": 100.00
                                 },
-                                "fy16Achieved": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/nontieredServerUtAutoMonitoring/fy16Achieved",
-                                    "name": "fy16Achieved",
-                                    "title": "fy16Achieved",
-                                    "description": "Value your agency achieved by the end of FY 16 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 100.00
-                                },
-                                "fy17Planned": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/nontieredServerUtAutoMonitoring/fy17Planned",
-                                    "name": "fy17Planned",
-                                    "title": "fy17Planned",
-                                    "description": "Value your agency plans to reach by the end of FY 17 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 100.00
-                                },
-                                "fy17Achieved": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/nontieredServerUtAutoMonitoring/fy17Achieved",
-                                    "name": "fy17Achieved",
-                                    "title": "fy17Achieved",
-                                    "description": "Value your agency achieved by the end of FY 17 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 100.00
-                                },
-                                "fy18Planned": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/nontieredServerUtAutoMonitoring/fy18Planned",
-                                    "name": "fy18Planned",
-                                    "title": "fy18Planned",
-                                    "description": "Value your agency plans to achieve by the end of FY 18 in the given optimization metric.",
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 100.00
-                                },
-                                "fy18Achieved": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/nontieredServerUtAutoMonitoring/fy18Achieved",
-                                    "name": "fy18Achieved",
-                                    "title": "fy18Achieved",
-                                    "description": "Value your agency achieved by the end of FY 18 in the given optimization metric.",
+                                "fy20Planned": {
+                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/availability/fy20Planned",
+                                    "name": "fy20Planned",
+                                    "title": "fy20Planned",
+                                    "description": "Value your agency plans to achieve by the end of fiscal year 2018 in the given optimization metric.",
                                     "type": "number",
                                     "minimum": 0,
                                     "maximum": 100.00
                                 },
                                 "explanationForUnmetPlannedValues": {
-                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/nontieredServerUtAutoMonitoring/explanationForUnmetPlannedValue",
+                                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/optimizationMetrics/availability/explanationForUnmetPlannedValue",
                                     "name": "explanationForUnmetPlannedValues",
                                     "title": "explanationForUnmetPlannedValue",
-                                    "description": "An explanation for an unmet planned value in the given optimization metric.",
+                                    "description": "Explanation for an unmet planned value in the given optimization metric.",
                                     "type": "string",
                                     "minLength": 0,
                                     "maxLength": 10000
@@ -29750,188 +29380,128 @@
                         }
                     }
                 },
-                "tieredClosures": {
-                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/tieredClosures",
-                    "name": "tieredClosures",
-                    "title": "tieredClosures",
-                    "description": "The set of DCOI targets for closures of tiered data centers",
+                "closures": {
+                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/closures",
+                    "name": "closures",
+                    "title": "closures",
+                    "description": "The set of DCOI targets for closures of data centers",
                     "type": "object",
                     "required": [
                         "fy16Planned",
                         "fy16Achieved",
                         "fy17Planned",
-                        "fy18Planned"
+                        "fy17Achieved",
+                        "fy18Planned",
+                        "fy18Achieved",
+                        "fy19Planned",
+                        "fy20Planned"
                     ],
                     "properties": {
-                        "fy18OMBtarget": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/tieredClosures/fy18OMBTarget",
-                            "name": "fy18OMBtarget",
-                            "title": "fy18OMBTarget",
-                            "description": "Value your agency must reach by the end of fy 2018 in total tiered closures; set by OMB.",
-                            "type": "number",
-                            "minimum": 0,
-                            "maximum": 4000,
-                            "multipleOf": 1
-                        },
                         "fy16Planned": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/tieredClosures/fy16Planned",
+                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/closures/fy16Planned",
                             "name": "fy16Planned",
                             "title": "fy16Planned",
-                            "description": "Value your agency plans to reach by the end of FY 16 in total tiered closures.",
+                            "description": "Value your agency plans to reach by the end of fiscal year 2016 in total tiered closures.",
                             "type": "number",
                             "minimum": 0,
                             "maximum": 1000,
                             "multipleOf": 1
                         },
                         "fy16Achieved": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/tieredClosures/fy16Achieved",
+                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/closures/fy16Achieved",
                             "name": "fy16Achieved",
                             "title": "fy16Achieved",
-                            "description": "Value your agency achieved by the end of FY 16 in total tiered closures.",
+                            "description": "Value your agency achieved by the end of fiscal year 2016 in total tiered closures.",
                             "type": "number",
                             "minimum": 0,
                             "maximum": 1000,
                             "multipleOf": 1
                         },
                         "fy17Planned": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/tieredClosures/fy17Planned",
+                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/closures/fy17Planned",
                             "name": "fy17Planned",
                             "title": "fy17Planned",
-                            "description": "Value your agency plans to reach by the end of FY 17 in total tiered closures.",
+                            "description": "Value your agency plans to reach by the end of fiscal year 2017 in total tiered closures.",
                             "type": "number",
                             "minimum": 0,
                             "maximum": 1000,
                             "multipleOf": 1
                         },
                         "fy17Achieved": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/tieredClosures/fy17Achieved",
+                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/closures/fy17Achieved",
                             "name": "fy17Achieved",
                             "title": "fy17Achieved",
-                            "description": "Value your agency achieved by the end of FY 17 in total tiered closures.",
+                            "description": "Value your agency achieved by the end of fiscal year 2017 in total tiered closures.",
                             "type": "number",
                             "minimum": 0,
                             "maximum": 1000,
                             "multipleOf": 1
                         },
                         "fy18Planned": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/tieredClosures/fy18Planned",
+                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/closures/fy18Planned",
                             "name": "fy18Planned",
                             "title": "fy18Planned",
-                            "description": "Value your agency plans to achieve by the end of FY 18 in total tiered closures.",
+                            "description": "Value your agency plans to achieve by the end of fiscal year 2018 in total tiered closures.",
                             "type": "number",
                             "minimum": 0,
                             "maximum": 1000,
                             "multipleOf": 1
                         },
                         "fy18Achieved": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/tieredClosures/fy18Achieved",
+                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/closures/fy18Achieved",
                             "name": "fy18Achieved",
                             "title": "fy18Achieved",
-                            "description": "Value your agency achieved by the end of FY 18 in total tiered closures.",
+                            "description": "Value your agency achieved by the end of fiscal year 2018 in total tiered closures.",
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1000,
+                            "multipleOf": 1
+                        },
+                        "fy19Planned": {
+                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/closures/fy19Planned",
+                            "name": "fy19Planned",
+                            "title": "fy19Planned",
+                            "description": "Value your agency plans to achieve by the end of fiscal year 2019 in total tiered closures.",
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1000,
+                            "multipleOf": 1
+                        },
+                        "fy19Achieved": {
+                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/closures/fy19Achieved",
+                            "name": "fy19Achieved",
+                            "title": "fy19Achieved",
+                            "description": "Value your agency achieved by the end of fiscal year 2019 in total tiered closures.",
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1000,
+                            "multipleOf": 1
+                        },
+                        "fy20Planned": {
+                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/closures/fy20Planned",
+                            "name": "fy20Planned",
+                            "title": "fy20Planned",
+                            "description": "Value your agency plans to achieve by the end of fiscal year 2020 in total tiered closures.",
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1000,
+                            "multipleOf": 1
+                        },
+                        "fy20Achieved": {
+                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/closures/fy20Achieved",
+                            "name": "fy20Achieved",
+                            "title": "fy20Achieved",
+                            "description": "Value your agency achieved by the end of fiscal year 2020 in total tiered closures.",
                             "type": "number",
                             "minimum": 0,
                             "maximum": 1000,
                             "multipleOf": 1
                         },
                         "explanationForUnmetPlannedValues": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/tieredClosures/explanationForUnmetPlannedValue",
+                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/closures/explanationForUnmetPlannedValue",
                             "name": "explanationForUnmetPlannedValues",
                             "title": "explanationForUnmetPlannedValue",
                             "description": "An explanation for an unmet planned value in total tiered closures.",
-                            "type": "string",
-                            "minLength": 0,
-                            "maxLength": 10000
-                        }
-                    }
-                },
-                "nontieredClosures": {
-                    "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/nontieredClosures",
-                    "name": "nontieredClosures",
-                    "title": "nontieredClosures",
-                    "description": "The set of DCOI targets for closures of non-tiered data centers",
-                    "type": "object",
-                    "required": [
-                        "fy16Planned",
-                        "fy16Achieved",
-                        "fy17Planned",
-                        "fy18Planned"
-                    ],
-                    "properties": {
-                        "fy18OMBtarget": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/nontieredClosures/fy18OMBTarget",
-                            "name": "fy18OMBtarget",
-                            "title": "fy18OMBTarget",
-                            "description": "Value your agency must reach by the end of fy 2018 in total non-tiered closures; set by OMB.",
-                            "type": "number",
-                            "minimum": 0,
-                            "maximum": 4000,
-                            "multipleOf": 1
-                        },
-                        "fy16Planned": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/nontieredClosures/fy16Planned",
-                            "name": "fy16Planned",
-                            "title": "fy16Planned",
-                            "description": "Value your agency plans to reach by the end of FY 16 in total non-tiered closures.",
-                            "type": "number",
-                            "minimum": 0,
-                            "maximum": 3000,
-                            "multipleOf": 1
-                        },
-                        "fy16Achieved": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/nontieredClosures/fy16Achieved",
-                            "name": "fy16Achieved",
-                            "title": "fy16Achieved",
-                            "description": "Value your agency achieved by the end of FY 16 in total non-tiered closures.",
-                            "type": "number",
-                            "minimum": 0,
-                            "maximum": 3000,
-                            "multipleOf": 1
-                        },
-                        "fy17Planned": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/nontieredClosures/fy17Planned",
-                            "name": "fy17Planned",
-                            "title": "fy17Planned",
-                            "description": "Value your agency plans to reach by the end of FY 17 in total non-tiered closures.",
-                            "type": "number",
-                            "minimum": 0,
-                            "maximum": 3000,
-                            "multipleOf": 1
-                        },
-                        "fy17Achieved": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/nontieredClosures/fy17Achieved",
-                            "name": "fy17Achieved",
-                            "title": "fy17Achieved",
-                            "description": "Value your agency achieved by the end of FY 17 in total non-tiered closures.",
-                            "type": "number",
-                            "minimum": 0,
-                            "maximum": 3000,
-                            "multipleOf": 1
-                        },
-                        "fy18Planned": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/nontieredClosures/fy18Planned",
-                            "name": "fy18Planned",
-                            "title": "fy18Planned",
-                            "description": "Value your agency plans to achieve by the end of FY 18 in total non-tiered closures.",
-                            "type": "number",
-                            "minimum": 0,
-                            "maximum": 3000,
-                            "multipleOf": 1
-                        },
-                        "fy18Achieved": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/nontieredClosures/fy18Achieved",
-                            "name": "fy18Achieved",
-                            "title": "fy18Achieved",
-                            "description": "Value your agency achieved by the end of FY 18 in total non-tiered closures.",
-                            "type": "number",
-                            "minimum": 0,
-                            "maximum": 3000,
-                            "multipleOf": 1
-                        },
-                        "explanationForUnmetPlannedValues": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/nontieredClosures/explanationForUnmetPlannedValue",
-                            "name": "explanationForUnmetPlannedValues",
-                            "title": "explanationForUnmetPlannedValue",
-                            "description": "An explanation for an unmet planned value in total non-tiered closures.",
                             "type": "string",
                             "minLength": 0,
                             "maxLength": 10000
@@ -29954,20 +29524,11 @@
                         "historicalCostSavings"
                     ],
                     "properties": {
-                        "fy18OMBtarget": {
-                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/costSavings/fy18OMBTarget",
-                            "name": "fy18OMBtarget",
-                            "title": "fy18OMBTarget",
-                            "description": "Value your agency must reach by the end of fy 2018 in cost savings from data centers; set by OMB; in MILLIONS of dollars.",
-                            "type": "number",
-                            "minimum": 0,
-                            "maximum": 40000
-                        },
                         "fy16Planned": {
                             "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/costSavings/fy16Planned",
                             "name": "fy16Planned",
                             "title": "fy16Planned",
-                            "description": "Value your agency plans to reach by the end of FY 16 in cost savings from data centers; in MILLIONS of dollars.",
+                            "description": "Value your agency plans to reach by the end of fiscal year 2016 in cost savings from data centers; in MILLIONS of dollars.",
                             "type": "number",
                             "minimum": 0,
                             "maximum": 40000
@@ -29976,7 +29537,7 @@
                             "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/costSavings/fy16Achieved",
                             "name": "fy16Achieved",
                             "title": "fy16Achieved",
-                            "description": "Value your agency achieved by the end of FY 16 in cost savings from data centers; in MILLIONS of dollars.",
+                            "description": "Value your agency achieved by the end of fiscal year 2016 in cost savings from data centers; in MILLIONS of dollars.",
                             "type": "number",
                             "minimum": 0,
                             "maximum": 40000
@@ -29985,7 +29546,7 @@
                             "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/costSavings/fy17Planned",
                             "name": "fy17Planned",
                             "title": "fy17Planned",
-                            "description": "Value your agency plans to reach by the end of FY 17 in cost savings from data centers; in MILLIONS of dollars.",
+                            "description": "Value your agency plans to reach by the end of fiscal year 2017 in cost savings from data centers; in MILLIONS of dollars.",
                             "type": "number",
                             "minimum": 0,
                             "maximum": 40000
@@ -29994,7 +29555,7 @@
                             "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/costSavings/fy17Achieved",
                             "name": "fy17Achieved",
                             "title": "fy17Achieved",
-                            "description": "Value your agency achieved by the end of FY 17 in cost savings from data centers; in MILLIONS of dollars.",
+                            "description": "Value your agency achieved by the end of fiscal year 2017 in cost savings from data centers; in MILLIONS of dollars.",
                             "type": "number",
                             "minimum": 0,
                             "maximum": 40000
@@ -30003,7 +29564,7 @@
                             "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/costSavings/fy18Planned",
                             "name": "fy18Planned",
                             "title": "fy18Planned",
-                            "description": "Value your agency plans to achieve by the end of FY 18 in total tiered closures; in MILLIONS of dollars.",
+                            "description": "Value your agency plans to achieve by the end of fiscal year 2018 in total tiered closures; in MILLIONS of dollars.",
                             "type": "number",
                             "minimum": 0,
                             "maximum": 40000
@@ -30012,7 +29573,43 @@
                             "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/costSavings/fy18Achieved",
                             "name": "fy18Achieved",
                             "title": "fy18Achieved",
-                            "description": "Value your agency achieved by the end of FY 18 in cost savings from data centers; in MILLIONS of dollars.",
+                            "description": "Value your agency achieved by the end of fiscal year 2018 in cost savings from data centers; in MILLIONS of dollars.",
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 40000
+                        },
+                        "fy19Planned": {
+                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/costSavings/fy19Planned",
+                            "name": "fy19Planned",
+                            "title": "fy19Planned",
+                            "description": "Value your agency plans to achieve by the end of fiscal year 2019 in total tiered closures; in MILLIONS of dollars.",
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 40000
+                        },
+                        "fy19Achieved": {
+                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/costSavings/fy19Achieved",
+                            "name": "fy19Achieved",
+                            "title": "fy19Achieved",
+                            "description": "Value your agency achieved by the end of fiscal year 2019 in cost savings from data centers; in MILLIONS of dollars.",
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 40000
+                        },
+                        "fy20Planned": {
+                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/costSavings/fy20Planned",
+                            "name": "fy20Planned",
+                            "title": "fy20Planned",
+                            "description": "Value your agency plans to achieve by the end of fiscal year 2020 in total tiered closures; in MILLIONS of dollars.",
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 40000
+                        },
+                        "fy20Achieved": {
+                            "id": "https://omb.max.gov/schemas/DCOIStrategicPlans/costSavings/fy20Achieved",
+                            "name": "fy20Achieved",
+                            "title": "fy20Achieved",
+                            "description": "Value your agency achieved by the end of fiscal year 2020 in cost savings from data centers; in MILLIONS of dollars.",
                             "type": "number",
                             "minimum": 0,
                             "maximum": 40000
@@ -30131,108 +29728,45 @@
 
         var dummyData = {
             "optimizationMetrics": {
-                "facilityUtilization": {
-                    "fy18OMBtarget": 80,
-                    "fy16Planned": 40,
-                    "fy16Achieved": 40,
-                    "fy17Planned": 40,
-                    "fy17Achieved": 40,
-                    "fy18Planned": 40,
-                    "fy18Achieved": 40,
-                    "stepsForAchievingPlannedValues": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                    "explanationForUnmetPlannedValues": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                },
                 "energyMetering": {
-                    "fy18OMBtarget": 100,
-                    "fy16Planned": 40,
-                    "fy16Achieved": 40,
-                    "fy17Planned": 40,
-                    "fy17Achieved": 40,
-                    "fy18Planned": 40,
-                    "fy18Achieved": 40,
-                    "stepsForAchievingPlannedValues": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                    "explanationForUnmetPlannedValues": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                },
-                "pue": {
-                    "fy18OMBtarget": 1.5,
-                    "fy16Planned": 5,
-                    "fy16Achieved": 5,
-                    "fy17Planned": 5,
-                    "fy17Achieved": 5,
-                    "fy18Planned": 5,
-                    "fy18Achieved": 5,
-                    "stepsForAchievingPlannedValues": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                    "explanationForUnmetPlannedValues": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    "fy19Planned": 18,
+                    "fy20Planned": 20
                 },
                 "virtualization": {
-                    "fy18OMBtarget": 4,
-                    "fy16Planned": 5,
-                    "fy16Achieved": 5,
-                    "fy17Planned": 5,
-                    "fy17Achieved": 5,
-                    "fy18Planned": 5,
-                    "fy18Achieved": 5,
-                    "stepsForAchievingPlannedValues": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                    "explanationForUnmetPlannedValues": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    "fy19Planned": 110,
+                    "fy20Planned": 120
                 },
-                "tieredServerUtAutoMonitoring": {
-                    "fy18OMBtarget": 65,
-                    "fy16Planned": 5,
-                    "fy16Achieved": 5,
-                    "fy17Planned": 5,
-                    "fy17Achieved": 5,
-                    "fy18Planned": 5,
-                    "fy18Achieved": 5,
-                    "stepsForAchievingPlannedValues": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                    "explanationForUnmetPlannedValues": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                "underutilizedServers": {
+                    "fy19Planned": 100,
+                    "fy20Planned": 25
                 },
-                "nontieredServerUtAutoMonitoring": {
-                    "fy18OMBtarget": 65,
-                    "fy16Planned": 5,
-                    "fy16Achieved": 5,
-                    "fy17Planned": 5,
-                    "fy17Achieved": 5,
-                    "fy18Planned": 5,
-                    "fy18Achieved": 5,
-                    "stepsForAchievingPlannedValues": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                    "explanationForUnmetPlannedValues": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                "availability": {
+                    "fy19Planned": 99.9,
+                    "fy20Planned": 99.99
                 }
             },
-            "tieredClosures": {
-                "fy18OMBtarget": 5,
-                "fy16Planned": 0,
-                "fy16Achieved": 5,
-                "fy17Planned": 5,
-                "fy17Achieved": 5,
-                "fy18Planned": 5,
-                "fy18Achieved": 5,
-                "stepsForAchievingPlannedValues": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                "explanationForUnmetPlannedValues": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            },
-            "nontieredClosures": {
-                "fy18OMBtarget": 5,
-                "fy16Planned": 5,
-                "fy16Achieved": 5,
-                "fy17Planned": 5,
-                "fy17Achieved": 5,
-                "fy18Planned": 5,
-                "fy18Achieved": 5,
-                "stepsForAchievingPlannedValues": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                "explanationForUnmetPlannedValues": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            "closures": {
+                "fy16Planned": 35,
+                "fy16Achieved": 36,
+                "fy17Planned": 45,
+                "fy17Achieved": 44,
+                "fy18Planned": 55,
+                "fy18Achieved": 56,
+                "fy19Planned": 66,
+                "fy20Planned": 77
             },
             "costSavings": {
-                "fy18OMBtarget": 5,
-                "fy16Planned": 5,
-                "fy16Achieved": 5,
-                "fy17Planned": 5,
-                "fy17Achieved": 5,
-                "fy18Planned": 5,
-                "fy18Achieved": 5,
-                "stepsForAchievingPlannedValues": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                "explanationForUnmetPlannedValues": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                "costsOfClosures": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                "costsOfOptimization": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                "historicalCostSavings": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                "fy16Planned": 78,
+                "fy16Achieved": 79,
+                "fy17Planned": 36,
+                "fy17Achieved": 37,
+                "fy18Planned": 12,
+                "fy18Achieved": 13,
+                "fy19Planned": 20,
+                "fy20Planned": 35,
+                "costsOfClosures": "REQUIRED TEXT",
+                "costsOfOptimization": "REQUIRED TEXT",
+                "historicalCostSavings": "REQUIRED TEXT"
             }
         };
 
