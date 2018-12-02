@@ -442,7 +442,7 @@ inefficient for one agency, but necessary for another to be able to
 respond to critical emergencies and security incidents.
 
 As a result, OMB will task agencies with identifying and reporting the
-number of under-utilized production servers in each data center, with
+number of underutilized production servers in each data center, with
 the intent that agencies should reduce the number of these servers over
 time. Since backups, standbys, development, and test servers are all
 critical to a well-functioning enterprise information system, they will
