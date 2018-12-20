@@ -66,8 +66,8 @@ centers, OMB has seen diminishing returns from agencies resulting from
 their closures. Much of the "low-hanging" fruit of easily consolidated
 infrastructure has been picked, and to realize further efficiencies will
 require continued investment to address the more complex areas where
-savings is achievable. While optimization will be the new priority,
-consolidation and closures should continue wherever applicable. OMB will
+savings is achievable. While optimization will be the new focus,
+consolidation and closures should continue as the higher priority wherever applicable. OMB will
 focus on targeted improvements in key areas where agencies can make
 meaningful improvements and achieve further cost savings.
 
