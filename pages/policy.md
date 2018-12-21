@@ -257,10 +257,7 @@ and operational efficiency where practical.
 The amount of information gathered and processed by the Federal
 Government continues to grow, especially with the rise of the "Internet
 of Things," cheap mobile computing, and Smart Cities. This has resulted
-in increasing agency compute needs to keep up with demand. Although
-vendor-provided services such as cloud technologies are potential
-solutions, they are not always more cost-effective alternatives to
-agency-hosted services. As a result of work that has occurred over the
+in increasing agency compute needs to keep up with demand. As a result of work that has occurred over the
 past years, there will be continuous improvements, but the Federal
 Government should not expect to see continued dramatic savings or
 large-scale closures from ongoing data center consolidation and
