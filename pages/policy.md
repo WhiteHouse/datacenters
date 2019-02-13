@@ -172,6 +172,11 @@ Transformation Service (TTS), with the following actions:
 -   Providing a forum for participating and interested agencies to
     discuss cloud and data center implementation and optimization.
 
+
+## Cloud Investment
+
+Cloud environments are scalable and allow agencies to provision resources as required, on-demand.13 Consistent with the Cloud First policy, agencies shall use cloud infrastructure where possible when planning new mission or support applications or consolidating existing applications. Agencies should take into consideration cost, security requirements, and application needs when evaluating cloud environments. As required by FITARA, agencies utilizing cloud services shall do so in a manner that is consistent with requirements of the Federal Risk and Authorization Management Program (FedRAMP) and National Institute of Standards and Technology (NIST) guidance.
+
 ## Optimization of Data Centers
 
 Over the past two years, the Office of Management and Budget has
